@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+            font-size: 1.875rem; /* 30px */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+        }
+
+        button {
+            height: 2.5rem; /* 40px */
+            width: 8rem; /* 130px */
+            font-size: 1rem; /* 16px */
+        }
+
+        .box {
+            margin-bottom: 2rem; /* 30px */
+        }
+
+        #display {
+            width: 7.5rem; /* 120px */
+            height: 2rem; /* 30px */
+        }
+
+        .num {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem; /* 16px */
+        }
+
+        .num div,
+        .num button {
+            margin-bottom: 1rem; /* 16px */
+        }
+
+        #input {
+            height: 2.5rem; /* 40px */
+            width: 9.375rem; /* 150px */
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .b1 {
+            padding: 0.5rem 0; /* 7px 0px */
+            font-size: 1.25rem; /* 20px */
+        }
+
+        #but {
+            background-color: rgb(159, 124, 190);
+            color: white;
+            font-size: 1.25rem; /* 20px */
+            height: 2.5rem; /* 40px */
+            width: 8rem; /* 130px */
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+
+        @media (min-width: 768px) {
+            .num {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>DICE ROLLER</h1>
+    </div>
+
+    <div class="num">
+        <div class="b1"># of DICE</div>
+        <div class="inp" id="input"></div>
+        <button id="but">ROLL DICE</button>
+    </div>
+    <div class="img" id="image"></div>
+
+    <script>
+        let button = document.getElementById("but");
+        let inpu = document.getElementById("input");
+        button.onclick = function random() {
+            let ran;
+            ran = Math.floor((Math.random() * 6) + 1);
+            console.log(ran)
+            inpu.innerText = ran;
+            document.getElementById("image").innerHTML = `<img src="dice/${ran}.png" alt="dice">`
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<h1>radius of the circle</h1>
+<label id="label">radius</label>
+<input id="text"><br><br>
+<button id="btn">submit</button>
+<h1 id="circ"></h1>
+
+<body>
+    <script>
+        let radius;
+        let cir
+        document.getElementById("btn").addEventListener("click", function () {
+            radius = document.getElementById("text").value;
+            radius = Number(radius);
+            cir = 2 * Math.PI * radius;
+            document.getElementById("label").textContent = `the radius is ${radius}`
+            console.log(cir)
+            document.getElementById("circ").textContent=`the circumference is ${cir}`
+
+        })
+    </script>
+</body>
+
+</html>

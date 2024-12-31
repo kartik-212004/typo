@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEMON</title>
+    <style>
+        #button {
+            font-size: 3em;
+            border-radius: 5px;
+        }
+
+        input {
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <label for="input"><button id="button">FETCH POKEMON</button></label>
+    <img src="" alt="" id="img">
+
+    <script>
+        let image;
+        let button = document.getElementById("button");
+        let input = document.getElementById("input");
+        let img = document.getElementById("img");
+
+        button.addEventListener("mouseover", mousein);
+        button.addEventListener("mouseout", mouseout);
+
+        function mousein() {
+            button.style.backgroundColor = "orange";
+        }
+
+        function mouseout() {
+            button.style.backgroundColor = "white";
+        }
+
+        button.onclick = () => {
+            hello();
+        };
+
+        async function hello() {
+            try {
+                let value = input.value.toString().toLowerCase();
+                let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
+                if (!response.ok) {
+                    throw new Error("Error fetching data");
+                }
+                let data = await response.json();
+                image = data.sprites.front_shiny;  // Use sprites.front_shiny instead of front_shiny
+                console.log(image);
+                img.src = image;  // Update img src after fetching data
+            } catch (error) {
+                console.log(error);
+                // Optionally handle errors such as displaying an error message
+            }
+        }
+    </script>
+
+</body>
+
+</html>

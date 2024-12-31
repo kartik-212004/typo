@@ -1,0 +1,146 @@
+<html>
+
+<head>
+  <title>LogIn To Spotify</title>
+  <style>
+    /* Add some basic styling to make the page look decent */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: ;
+      border: 1px solid #ccc;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      height: 40px;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    .social-btn {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .social-btn.google {
+      background-color: #dd4b39;
+      color: #fff;
+    }
+
+    .social-btn.facebook {
+      background-color: #3b5998;
+      color: #fff;
+    }
+
+    .social-btn.apple {
+      background-color: #333;
+      color: #fff;
+    }
+
+    form {
+      background-color: black;
+    }
+
+    #p {
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>LogIn To Spotify</h1>
+  <form id="login-form">
+    <p id="p">Music For Everyone</p>
+    <button class="social-btn google">Google</button>
+    <button class="social-btn facebook">Facebook</button>
+    <button class="social-btn apple">Apple</button>
+    <button class="social-btn">Phone Number</button>
+    <br><br>
+    <p>Or log in with email and password:</p>
+    <label for="email">Email or username:</label>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="checkbox" id="remember" name="remember">
+    <label for="remember">Remember me</label><br><br>
+    <button type="submit">Log In</button>
+    <p><a href="#" id="forgot-password">Forgot your password?</a></p>
+  </form>
+
+  <script>
+    // Add event listeners to the social media buttons
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // TO DO: implement social media login functionality
+        console.log(`Social media login with ${btn.textContent} clicked`);
+      });
+    });
+
+    // Add event listener to the login form
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TO DO: implement login functionality
+      console.log('Login form submitted');
+    });
+
+    // Add event listener to the forgot password link
+    document.getElementById('forgot-password').addEventListener('click', () => {
+      // TO DO: implement forgot password functionality
+      console.log('Forgot password link clicked');
+    });
+  </script>
+</body>
+
+</html>

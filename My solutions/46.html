@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: aqua;
+        }
+        .box {
+            height: 20vh;
+            width: 20vw;
+            background-color: blueviolet;
+            /* animation: animations;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+            animation-timing-function: ease-in-out;
+            animation-direction:alternate; */
+            animation: animations 2s ease-in-out  infinite alternate ;
+        }
+        @keyframes animations {
+            from{
+                background-color: red;
+/* transform: translateX(10px); */
+            }
+            to{
+                background-color: rgb(22, 8, 8);
+                transform: translateX(40vw) translateY(40vh)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">box</div>
+    </div>
+</body>
+
+</html>

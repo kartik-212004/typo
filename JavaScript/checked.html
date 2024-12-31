@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<input type="checkbox" id="c1">
+<label for="c1">subscribe</label><br>
+<input type="checkbox" id="c2">
+<label for="c2">Paypal</label><br>
+<input type="checkbox" id="c3">
+<label for="c3">Fampay</label><br>
+<input type="checkbox" id="c4">
+<label for="c4">Visa</label><br>
+<button id="btn">Submit</button>
+<h1 id="h1"></h1>
+<h1 id="h2"></h1>
+
+<body>
+    <script>
+        const c1 = document.getElementById("c1");
+        const c2 = document.getElementById("c2");
+        const c3 = document.getElementById("c3");
+        const c4 = document.getElementById("c4");
+        const h1 = document.getElementById("h1")
+        const h2 = document.getElementById("h2")
+        const b = document.getElementById("btn")
+        b.onclick = function () {
+            if (c1.checked) {
+                h1.innerText = "you are subscribed"
+            }
+            
+            if (c2.checked) {
+                h2.innerText = "you are paying with paypal"
+            }
+            
+            if (c1.checked) {
+                h2.innerText = "you are paying with Fampay"
+            }
+            
+            if (c4.checked) {
+                h2.innerText = "you are paying with visa"
+            }
+            else{
+                h2.innerText = "Select a payment type"
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

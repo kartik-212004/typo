@@ -1,0 +1,44 @@
+body {
+    background-image: url(https://wallpaperaccess.com/full/2749338.jpg);
+    width: 96vw;
+    height: 96vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 100vw;
+    text-align: center;
+}
+
+p {
+    font-size: 100px;
+    position: relative;
+    z-index: 10;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #23233b;
+    backdrop-filter: blur(5px);
+
+}
+
+@media screen and (max-width:589px) {
+    .clock {
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:301px) {
+    .clock{
+        font-size: 20px;
+    }
+}
+#ap{
+    margin-left: 50px;
+}

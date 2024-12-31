@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            font-size: 100px;
+        }
+
+        h1 {
+            font-size: 70px;
+            margin: 30px;
+        }
+
+        .buttons {
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .box {
+            border: 3px solid green;
+            background-color: white;
+            padding: 30px;
+            border-radius: 40px;
+            width: 595px;
+            height: 241px;
+        }
+
+        button {
+            width: 130px;
+            height: 60px;
+            border-radius: 20px;
+            color: white;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button:nth-child(1) {
+            background-color: rgb(87, 138, 155);
+
+        }
+
+        button:nth-child(3) {
+            background-color: red;
+        }
+
+        button:nth-child(2) {
+            background-color: rgb(102, 153, 102);
+        }
+
+        body {
+            background-color: rgb(201, 200, 200);
+        }
+    </style>
+</head>
+<div class="main">
+    <h1>STOPWATCH</h1>
+    <div class="box">
+        <span>
+            <li>
+                <ul id="h">00</ul>
+                <ul>:</ul>
+                <ul id="m">00</ul>
+                <ul>:</ul>
+                <ul id="s">00</ul>
+                <ul>:</ul>
+                <ul id="ms">00</ul>
+            </li>
+        </span>
+        <div class="buttons">
+            <button id="start">START</button>
+            <button id="reset">RESET</button>
+            <button id="stop">STOP</button>
+        </div>
+    </div>
+</div>
+
+<body>
+</body>
+<script>
+    let interval;
+    let ss = 0;
+    let hh = 0;
+    let mmss = 0;
+    let mm = 0;
+    let stop = document.getElementById("stop");
+    let start = document.getElementById("start");
+    let reset = document.getElementById("reset");
+    let h = document.getElementById("h");
+    let m = document.getElementById("m");
+    let s = document.getElementById("s");
+    let ms = document.getElementById("ms");
+    start.onclick = function () {
+        interval = setInterval(startcount, 10)
+    }
+    function startcount() {
+
+        ms.innerText = mmss;
+        mmss++;
+        if (mmss >= 99) {
+            mmss = 0;
+            ss++;
+            s.innerText = ss;
+            if (ss > 58) {
+                ss = 0;
+                mm++;
+                m.innerText = mm;
+                if (mm > 58) {
+                    mm = 0;
+                    hh++;
+                    h.innerText = hh;
+                }
+            }
+        }
+        ms.innerText = mmss.toString().padStart(2, '0');
+        s.innerText = ss.toString().padStart(2, '0');
+        m.innerText = mm.toString().padStart(2, '0');
+        h.innerText = hh.toString().padStart(2, '0');
+
+    }
+    reset.onclick = function () {
+        h.innerText = "00";
+        m.innerText = "00";
+        s.innerText = "00";
+        ms.innerText = "00";
+        mmss = mm = ss = hh = 0;
+    }
+    stop.onclick = function () {
+        clearInterval(interval)
+    }
+</script>
+
+</html>

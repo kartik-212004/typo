@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("could find the problem");
+            }
+            else {
+                return response.json();
+            }
+        })
+        .then((data) => {
+            console.log(data.name, data.weight)
+        }).catch(error => {
+            console.log(error)
+        }
+        )
+    {
+
+    }
+</script>
+
+</html>

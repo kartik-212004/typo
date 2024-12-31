@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events, Event Bubbling, setInterval & setTimeout</title>
+    <style>
+        .container {
+            height: 200px;
+            width: 100%;
+            background-color: yellow;
+            border: 2px solid black;
+            margin: auto auto;
+            color: rgb(218, 19, 19);
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .body {
+            height: 100px;
+            width: 80%;
+            background-color: rgb(172, 81, 96);
+            border: 2px solid black;
+            margin: auto auto;
+            display: flex;
+            color: white;
+            justify-content: center;
+        }
+
+        .baby {
+            height: 50px;
+            width: 60%;
+            /* background-color: red; */
+            border: 2px solid black;
+            margin: auto auto;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">i am a container
+        <div class="body">i am a body
+            <div class="baby">i am a baby</div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".container").addEventListener("click", e => {
+            e.stopPropagation()
+            alert("container was kidnapped")
+        })
+        document.querySelector(".body").addEventListener("click", e => {
+            e.stopPropagation()
+            alert("body was found")
+        })
+        document.querySelector(".baby").addEventListener("click", e => {
+            e.stopPropagation()
+            alert("baby was haressed")
+        })
+        setInterval(() => {
+            document.querySelector(".body").style.backgroundColor = getRandomColor()
+            document.querySelector(".container").style.backgroundColor = getRandomColor()
+            document.querySelector(".baby").style.backgroundColor = getRandomColor()
+        }, 100);
+
+        function getRandomColor() {
+            let val1 = Math.ceil(0 + Math.random() * 255);
+            let val2 = Math.ceil(0 + Math.random() * 255);
+            let val3 = Math.ceil(0 + Math.random() * 255);
+            return `rgb(${val1}, ${val2}, ${val3})`
+        }
+    </script>
+</body>
+
+
+
+</html>

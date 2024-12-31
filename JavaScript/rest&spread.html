@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>function result(...marks) {
+        let result = 0;
+        for (let total of marks) {
+            result = result + total;
+        }
+        return result;
+    }
+    function average(...averg) {
+        let avg = 0;
+        for (let aveg of averg) {
+            avg = avg + aveg;
+        }
+        avg = avg / averg.length;
+        return avg;
+    }
+    let totalm = result(30, 99, 45, 34, 23);
+    let mar = average(30, 99, 45, 34, 23);
+    console.log("Average is :" + mar)
+    console.log("total marks are :" + totalm)
+
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // USINF FOR LOOP
+        let a= prompt("enter a number")
+        let fac=1
+        for (let index = 1; index <= a; index++) {
+             fac=fac*index
+        }
+        alert(`The Factorial of ${a} is ${fac}`)
+
+// USING REDUCE Function
+let b1=prompt("enter a number")
+let element
+let a1=[]
+for (let index = 1; index <= b1; index++) {
+    a1.push(index)
+}
+const r=(a,b)=>{
+return a*b
+}
+let z=a1.reduce(r)
+alert(`Factorial is ${z}`);
+    </script>
+</body>
+</html>

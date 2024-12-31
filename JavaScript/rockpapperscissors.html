@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 50%;
+            height: 50%;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .box {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        p {
+
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .shown {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .symbol {
+            width: 450px;
+            height: 100px;
+            margin: auto;
+
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        li {
+            font-size: 100px;
+            margin: 20px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 200px;
+            background-color: #6bdbff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>ROCK - PAPER - SCISSORS</h1>
+        <div class="box">
+            <ul>
+                <li id="rock" onclick="check(1);compcheck()">✊</li>
+                <li id="paper" onclick="check(2);compcheck()">🤚</li>
+                <li id="scissor" onclick="check(3);compcheck()">✌️</li>
+            </ul>
+        </div>
+        <div class="box2">
+            <div class="symbol">
+                <p id="player">Player :</p>
+                <p id="computer">Computer :</p>
+            </div>
+            <div class="shown" id="result"></div>
+            <div class="score">
+                <h2 id="player score">
+                    Player score : <span id="ps"></span>
+                </h2>
+                <h2 id="computer score">
+                    Computer Score :<span id="cs"></span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let cv;
+    let pv;
+    let val;
+    let result = document.getElementById("result");
+    let c = 0;
+    let p = 0;
+    let player = document.getElementById("player");
+    let computer = document.getElementById("computer");
+    let playerscore = document.getElementById("ps");
+    let computerscore = document.getElementById("cs");
+    function check(value) {
+        val = value;
+        if (value == 1) {
+            player.innerText = "Player : ROCK";
+            document.getElementById("rock").textContent == "";
+            pv = "rock";
+        }
+        else if (value == 2) {
+
+            player.innerText = "Player : PAPER";
+            document.getElementById("rock").textContent == "";
+            pv = "paper";
+        }
+        else if (value == 3) {
+
+            player.innerText = "Player : SCISSOR";
+            document.getElementById("rock").textContent == "";
+            pv = "scissor";
+        }
+
+    }
+    function compcheck() {
+        let rn = Math.floor((Math.random() * 3) + 1);
+        if (rn == 1) {
+            computer.innerText = "Computer : ROCK";
+            cv = "rock";
+        }
+        if (rn == 2) {
+            computer.innerText = "Computer : PAPER";
+            cv = "paper";
+        }
+        if (rn == 3) {
+            computer.innerText = "Computer : SCISSOR";
+            cv = "scissor";
+        }
+
+        if (rn == val || rn == val || rn == val) {
+            result.innerText = "TIEEE!!!"
+            result.style.color = "orange";
+        }
+        if (cv == "rock" && pv == "paper") {
+            p++;
+            playerscore.innerText = p;
+            result.innerText = "YOU WON!! 😀"
+            result.style.color = "green";
+            playerscore.style.color = "green";
+        }
+        if (pv == "scissor" && cv == "paper") {
+            p++;
+            playerscore.innerText = p;
+            result.innerText = "YOU WON!! 😀"
+            result.style.color = "green";
+            playerscore.style.color = "green";
+        }
+        if (cv == "scissor" && pv == "rock") {
+            p++;
+            playerscore.innerText = p;
+            result.innerText = "YOU WON!! 😀"
+            result.style.color = "green";
+            playerscore.style.color = "green";
+        }
+        if (cv == "scissor" && pv == "paper") {
+            c++;
+            computerscore.innerText = c;
+            result.innerText = "YOU LOST😔!!"
+            result.style.color = "red";
+            computerscore.style.color = "red";
+        }
+        if (cv == "rock" && pv == "scissor") {
+            c++;
+            computerscore.innerText = c;
+            result.innerText = "YOU LOST😔!!"
+            result.style.color = "red";
+            computerscore.style.color = "red";
+        }
+        if (pv == "rock" && cv == "paper") {
+            c++;
+            computerscore.innerText = c;
+            result.innerText = "YOU LOST😔!!"
+            result.style.color = "red";
+            computerscore.style.color = "red";
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            background-image: url(https://th.bing.com/th/id/OIP.7FZiawlsOGfRhpoivLPaSAHaE8?rs=1&pid=ImgDetMain);
+            object-fit: fill;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .temp {
+            font-size: 30px;
+            padding: 0px 0px 20px 0px;
+        }
+
+        #temp {
+            width: 130px;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid green;
+            text-align: center;
+            font-size: 12px;
+
+        }
+
+        .b1 {
+            width: 140px;
+            font-size: 20px;
+        }
+
+        .b2 {
+            width: 140px;
+            font-size: 20px;
+        }
+
+
+        button {
+            position: absolute;
+            bottom: 20px;
+            width: 70px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+<div class="main">
+    <div class="temp">Temperature</div>
+    <div class="check"><input id="t" placeholder="Enter In Kelvin" type="text">
+    </div>
+    <div class="b1"><input type="checkbox" name="" id="f">
+        <label for="f">Fahrenheit</label>
+    </div>
+    <div class="b2"><input type="checkbox" name="" id="c">
+        <label for="c">Celcius</label>
+    </div>
+    <button id="b">Submit</button>
+    <div id="result">33</div>
+</div>
+
+<body>
+    <script>
+
+        document.getElementById("b").onclick = function () {
+            let temp = document.getElementById("t").value
+            temp = Number(temp)
+            console.log(temp)
+            let toc = temp + 273.15;
+            let tof = ((temp - 273.15) * 1.8) + 32;
+            console.log(toc)
+            if (f.checked) {
+                document.getElementById("result").innerText = "Fahrenheit :" + tof
+            }
+            if (c.checked) {
+                document.getElementById("result").innerText = "Celcius :" + toc
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

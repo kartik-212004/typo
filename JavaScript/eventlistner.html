@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: rgb(206, 241, 154);
+            font-weight: 900;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a>CLICK ME 😁</a>
+    </div>
+</body>
+<script>
+    let box = document.getElementsByClassName("box");
+    box[0].addEventListener("click", () => {
+        box[0].innerText = "OUCHHH! 🤕"
+        box[0].style.backgroundColor = "red";
+    })
+    box[0].addEventListener("mouseover", (e) => {
+        box[0].innerText = "I WAS JOKING 😂"
+        box[0].style.backgroundColor = "purple";
+
+    })
+    box[0].addEventListener("mouseout", (e) => {
+        box[0].innerText = "CLICK ME 😁"
+        box[0].style.backgroundColor = "rgb(206, 241, 154)";
+    })
+
+</script>
+
+</html>

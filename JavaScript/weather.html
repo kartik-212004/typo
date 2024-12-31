@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: "Outfit", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 600px;
+            height: 700px;
+            margin: auto;
+
+        }
+
+        input {
+            width: 90%;
+            height: 60px;
+            border-radius: 8px;
+            font-size: 52px;
+            margin: 0px 0px 0px 10px;
+            font-weight: 400;
+        }
+
+        .input {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        button {
+            width: 40%;
+            border-radius: 8px;
+            font-size: 21px;
+            font-weight: 700;
+            color: white;
+            background-color: hsl(38, 88%, 50%);
+            margin: 0px 10px 0px 10px;
+        }
+
+        button:hover {
+            background-color: rgb(48, 150, 48);
+        }
+
+
+        .content {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: 10px 7px 10px grey;
+            border: 1px solid grey;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 10px 0px 10px 0px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 50px;
+            margin: 10px 0px 10px 0px;
+            font-weight: 600;
+        }
+
+
+        #p1 {
+            font-size: 30px;
+            margin: 10px 0px 10px 0px;
+            font-weight: 600;
+        }
+
+        #p2 {
+            font-family: cursive;
+            font-size: 30px;
+            margin: 10px 0px 10px 0px;
+            font-weight: 700;
+        }
+
+        body {
+            margin: 40px;
+        }
+
+        .content {
+            background: linear-gradient(180deg, hsl(220, 100%, 87%), hsl(40, 100%, 75%));
+        }
+
+        .img {
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="input">
+            <input id="input" type="text">
+            <button id="button">GET WEATHER</button>
+        </div>
+        <div class="content">
+            <h1 id="h1">DEHRADUN</h1>
+            <h2 id="h2">60.3 F</h2>
+            <p id="p1">humidity</p>
+            <p id="p2">overcast clouds</p>
+            <div id="image" class="img">☁️</div>
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.getElementById("input");
+    let button = document.getElementById("button");
+    let h1 = document.getElementById("h1");
+    let h2 = document.getElementById("h2");
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let city;
+    let temperature;
+
+    button.onclick = () => {
+        city = input.value.toString().toLowerCase().trim();
+
+        if (city.length > 0) {
+            call(city);
+        }
+        else {
+            console.log("Enter A Value");
+            h1.innerText = "ENTER A CITY NAME!!";
+            h1.style.fontSize = "35px"
+            h1.style.color = "red";
+        }
+    }
+    async function call(city) {
+        try {
+            h2.style.color = "#771818";
+            let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0b2d923cef657b2c50c1f8e4a7e8a3d0`)
+            let data = await response.json();
+            if (response.ok) {
+                city = city.toString().toUpperCase();
+                console.log(city)
+                h1.innerText = city;
+                console.log(data)
+                temperature = data.main.temp.toString();
+                temperature = Number(temperature);
+                temperature = Math.round((temperature - 273.5) * 10) / 10;
+                console.log(temperature, typeof temperature);
+                h2.innerText = `${temperature} °C`;
+                p1.innerText = `HUMIDITY : ${data.main.humidity}%`
+                p1.style.color = "#796237"
+                p2.innerText = `${data.weather[0].main.toUpperCase()}`
+                p2.style.color = "#124d12";
+                let weatherId = data.weather[0].id;
+                if (weatherId >= 200 && weatherId <= 232) {
+                    document.getElementById("image").innerText = "⛈️"
+                }
+                else if (weatherId >= 300 && weatherId <= 232) {
+                    document.getElementById("image").innerText = "🌧"
+                }
+                else if (weatherId >= 500 && weatherId <= 531) {
+                    document.getElementById("image").innerText = "🌧️"
+                }
+                else if (weatherId >= 600 && weatherId <= 622) {
+                    document.getElementById("image").innerText = "❄️"
+                }
+                else if (weatherId = 800) {
+                    document.getElementById("image").innerText = "☁️"
+                }
+                else if (weatherId >= 801 && weatherId <= 804) {
+                    document.getElementById("image").innerText = "🌥️"
+                }
+                else if (weatherId = 701) {
+                    document.getElementById("image").innerText = "😶‍🌫️"
+                }
+                else if (weatherId = 711) {
+                    document.getElementById("image").innerText = "💨"
+                }
+            }
+            else {
+                throw new Error()
+
+            }
+        }
+        catch (error) {
+            console.log("error");
+            h1.innerText = "CAN'T FETCH DATA";
+            h1.style.fontSize = "30px";
+            h2.innerText = "";
+            p1.innerText = "";
+            p2.innerText = "";
+        }
+
+    }
+</script>
+
+</html>

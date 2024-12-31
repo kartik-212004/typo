@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(https://wallpapercave.com/wp/wp3058028.png);
+        }
+
+        .box {
+            /* margin: auto auto; */
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 40px;
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 2px 2px 2px rgb(22, 14, 15);
+            color: rgb(218, 215, 72);
+        }
+button{
+    width: 80px;
+    height: 30px;
+    margin: 20px;
+    position: relative;
+    border-radius: 11px;
+    font-size: 17px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.a1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 80vh;
+
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            position: relative;
+            right: 800px;
+            left: 800px;
+            top: 200px;
+        }
+        #a2 {
+        /* width: 100px; */
+        /* height: 100px; */
+        /* background-color: blue; */
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <img src="https://img.freepik.com/free-vector/hand-drawn-female-bear-illustration_23-2149944558.jpg?w=740&t=st=1711774456~exp=1711775056~hmac=751bed5093efb90930ee0fd13ea99dfc212126f32103b476fa72abb329b17bc4" alt="">
+    <div class="container">
+          <div class="box">Should We Go On A Date Mansi ?F
+        </div>
+        <div class="button">
+            <button class="a1">YES</button>
+            <button id="a2">NO</button>
+        </div>
+    </div>
+</body>
+<script>
+     const a2 = document.getElementById('a2');
+
+a2.addEventListener('mouseenter', () => {
+    const width = window.innerWidth - a2.offsetWidth;
+    const height = window.innerHeight - a2.offsetHeight;
+
+    const randomX = Math.floor(Math.random() * width);
+    const randomY = Math.floor(Math.random() * height);
+
+    a2.style.left = randomX + 'px';
+    a2.style.top = randomY + 'px';
+});
+document.title="mansi"
+</script>
+</html>

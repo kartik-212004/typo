@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 200px;
+            font-size: 70px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="emoji" tabindex="0">😀</div>
+</body>
+<script>
+    let pixel = 10;
+    let x, y;
+    x = y = 0;
+    let emo = document.getElementById("emoji");
+    emo.addEventListener("keydown", e => {
+        if (e.key.startsWith("Arrow")) {
+            switch (e.key) {
+                case "ArrowUp":
+                    y = y - pixel;
+                    break;
+                case "ArrowDown":
+                    y = y + pixel;
+                    break;
+                case "ArrowRight":
+                    x = x + pixel;
+                    break;
+                case "ArrowLeft":
+                    x = x - pixel;
+                    console.log("object")
+                    break;
+
+            }
+            emo.style.left = `${x}px`;
+            emo.style.top = `${y}px`
+        }
+
+    });
+</script>
+
+</html>

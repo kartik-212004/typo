@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<label for="mail">Enter Your Email</label>
+<input type="email" name="" id="mail">
+<button id="b">
+    SUBMIT
+</button><br><br>
+<h1 id="h1"></h1>
+
+<body>
+    <script>
+        var box
+        document.getElementById("b").onclick = function hello () {
+            var box = document.getElementById("mail").value;
+            console.log(box)
+
+            let index = box.indexOf("@");
+            console.log(index);
+            let username = box.slice(0, index);
+            document.getElementById("h1").innerText = username;
+        }
+    </script>
+</body>
+
+</html>
+
+
+<div class="box">
+    <h1>Temperature</h1><br>
+    <span></span>
+    
+    <br>
+    <input type="checkbox" name="" id="f">
+    <label for="f">Fahrenheit</label><br>
+    <input type="checkbox" name="" id="c">
+    <label for="c">Celcius</label>
+    <button id="b">Submit</button>

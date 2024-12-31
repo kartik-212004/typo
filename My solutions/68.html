@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Selecting by Ids, Classes, and More</title>
+    <style>
+        .box {
+            /* box-sizing: border-box; */
+            height: 34px;
+            width: 34px;
+            padding: 40px;
+            border: 2px solid black;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">bhupender jogi 1</div>
+        <div class="box">bhupender jogi 1.5</div>
+        <div class="box">bhupender jogi 2</div>
+        <div id="redbox" class="box">bhupender jogi 2.5</div>
+        <div class="box">bhupender jogi 3</div>
+        <div class="box">bhupender jogi 4</div>
+        <div class="box">bhupender jogi 5</div>
+    </div>
+</body>
+<script>
+    // NOW BY CLASS
+console.log("system")
+let bj=document.getElementsByClassName("box")
+console.log(bj)
+bj[4].style.backgroundColor="red"
+
+    // NOW BY ID    
+     console.log("system hang")
+     let b=document.getElementById("redbox")
+     b.style.backgroundColor="purple"
+    // QUERY SELECTOR 
+
+    document.querySelectorAll(".box").forEach(e=>
+    {
+        e.style.backgroundColor="red"
+    })
+    
+    
+     </script>
+
+</html>

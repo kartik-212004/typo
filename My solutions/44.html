@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7 - Design the Grid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(135px);
+            font-family: 'Segoe UI';
+        }
+
+        .grids>ul>li {
+            list-style: none;
+            background-color: #f9f9f9;
+        }
+
+        .grids>ul {
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            column-gap: 30px;
+            grid-template-rows: 150px 150px 150px 150px;
+            row-gap: 30px;
+        }
+
+        .hello {
+            display: flex;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+.h1
+{
+    font-weight: 600;
+    font-size: 25px;
+}
+        .sub {
+            display: flex;
+            justify-content: center;
+            transform: translateY(10px);
+        }
+
+        .one {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #00b6d1;
+            margin-right: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-family: sans-serif;
+            transform: translateY(10px);
+            text-decoration: none;
+        }
+        .one:hover
+        {
+            background-color: #03a0b8;
+        }
+        .two:hover
+        {
+            background-color: #53a553;
+        }
+
+        .two {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-family: sans-serif;
+            transform: translateY(10px);
+            text-decoration: none;
+        }
+        .lan
+        {
+            display: flex;
+            justify-content: center;
+        }
+        .l{
+            color: #f9f9f9;
+        }
+        @media screen and (max-width:942px){
+            .grids>ul{
+                grid-template-columns: 1fr;  
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="grids">
+        <ul>
+            <li>
+                <div class="hello english">
+                    <h1>English</h1>
+                </div>
+                <div class="lan l">English</div>
+                <div class="sub">
+                    <a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+                
+            </li>
+            <li>
+                <div class="hello german">
+                    <h1>Deutsch</h1>
+                </div>
+                <div class="lan"><span class="la">German</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello italian">
+                    <h1>Italiano</h1>
+                </div>
+                <div class="lan"><span class="la">Italian</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello spanish">
+                    <h1>Español</h1>
+                </div>
+                <div class="lan"><span class="la">Spanish</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello french">
+                    <h1>français</h1>
+                </div>
+                <div class="lan"><span class="la">French</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello brazil">
+                    <h1>Português brasileiro</h1>
+                </div>
+                <div class="lan"><span class="la">Brazilian Portuguese</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello japan">
+                    <h1>日本</h1>
+                </div>
+                <div class="lan"><span class="la">Japanese</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello korea">
+                    <h1>한국어</h1>
+                </div>
+                <div class="lan"><span class="la">Korean</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello china">
+                    <h1>中国</h1>
+                </div>
+                <div class="lan"><span class="la">Chinese</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+            <li>
+                <div class="hello TraditionalChinese">
+                    <h1>中國</h1>
+                </div>
+                <div class="lan"><span class="la">Traditional Chinese</span></div>
+                <div class="sub"><a type="button" class="one" href="Assets/ue_english_64.exe">Download 32-bit</a></span>
+                    <a type="button" class="two" href="Assets/ue_english_64.exe">Download 64-bit</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

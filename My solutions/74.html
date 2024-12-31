@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">I Am A Div</div>
+    </div>
+    <button id="btn">change content</button>
+</body>
+<script>
+    function rcolor() {
+            let v1 = Math.ceil(0 + Math.random() * 225)
+            let v2 = Math.ceil(0 + Math.random() * 225)
+            let v3 = Math.ceil(0 + Math.random() * 225)
+            return `rgb(${v1}, ${v2}, ${v3})`;
+        }
+    let button = document.getElementById("btn")
+    button.addEventListener("click", (e) => {
+        e.stopPropagation
+        // alert("clicked")
+        document.querySelector(".box").innerHTML = "clicked"
+    })
+    setInterval(() => {
+        button.style.backgroundColor = rcolor()
+    }, 2000)
+</script>
+
+</html>

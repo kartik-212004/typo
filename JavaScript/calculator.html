@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .box {
+            width: 470px;
+            height: 650px;
+            border-radius: 10px;
+
+        }
+
+        .number {
+            background-color: rgb(31, 31, 31);
+            width: 100%;
+            height: calc(100% - 10vh);
+            border-radius: 0px 0px 10px 10px;
+            padding: 10px 0px 10px 0px;
+
+        }
+
+        li {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+        }
+
+        div {
+
+            margin: auto;
+
+        }
+
+        h1 {
+            text-align: center;
+            vertical-align: middle;
+            line-height: 90px;
+            border-radius: 70px;
+            width: 90px;
+            height: 90px;
+            color: white;
+            font-size: 60px;
+
+        }
+
+        input {
+            width: 100%;
+            height: 13vh;
+            background-color: rgb(51, 51, 51);
+            border-radius: 10px 10px 0px 0px;
+            border: 0px;
+            font-size: 70px;
+            color: white;
+            text-align: right;
+        }
+
+        .sign {
+            background-color: rgb(250, 156, 25);
+        }
+
+        .numbers {
+            background-color: rgb(77, 77, 77);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">
+
+            <input id="inpu">
+
+            <div class="number">
+                <li>
+                    <div>
+                        <h1 class="sign" id="p" onclick="appendToDisplay(`+`)">+</h1>
+                    </div>
+                    <div>
+                        <h1 class=" numbers" onclick="appendToDisplay(`7`)" id="seven">7</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`8`)" id="eight">8</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`9`)" id="nine">9</h1>
+                    </div>
+                    <div>
+                        <h1 class="sign" onclick="appendToDisplay(`-`)" id="m">-</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`4`)" id="four">4</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`5`)" id="five">5</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`6`)" id="six">6</h1>
+                    </div>
+                    <div>
+                        <h1 class="sign" onclick="appendToDisplay(`*`)" id="mu">*</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`1`)" id="one">1</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`2`)" id="two">2</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`3`)" id="three">3</h1>
+                    </div>
+                    <div>
+                        <h1 class="sign" onclick="appendToDisplay(`/`)" id="d">/</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`0`)" id="zero">0</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="appendToDisplay(`.`)" id="dot">.</h1>
+                    </div>
+                    <div>
+                        <h1 class="numbers" onclick="calculate()" id="e">=</h1>
+                    </div>
+                    <div>
+                        <h1 class="sign" onclick="clr()" id="c">C</h1>
+                    </div>
+                </li>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    let calc
+    let v = document.getElementById("inpu");
+    function appendToDisplay(lab) {
+        v.value = v.value + lab;
+    }
+    function clr() {
+        v.value = "";
+    }
+    function calculate() {
+        try {
+            calc = eval(v.value);
+        }
+        catch {
+            v.value = "ERROR"
+        }
+        v.value = calc;
+        console.log(calc);
+    }
+</script>
+
+</html>

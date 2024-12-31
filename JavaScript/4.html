@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            margin: 0px 50% 0px 50%;
+        }
+
+        .b {
+            width: 80px;
+            height: 40px;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #b1 {
+            background-color: greenyellow;
+        }
+
+        #b2 {
+            background-color: yellow;
+        }
+
+        #b3 {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<h1 id="count">0</h1><br>
+<div class="box">
+    <button class="b" id="b1">Decrement</button>
+    <button class="b" id="b2">Reset</button>
+    <button class="b" id="b3">Increment</button>
+</div>
+
+<body>
+    <script>
+        let btn = 0
+        document.getElementById("b1").addEventListener("click", function () {
+            btn--;
+            document.getElementById("count").innerText = btn;
+        })
+        
+        document.getElementById("b2").addEventListener("click", function () {
+            btn=0
+            document.getElementById("count").innerText = btn
+        })
+        
+        document.getElementById("b3").addEventListener("click", function () {
+            btn++;
+            document.getElementById("count").innerText = btn;
+        })
+
+    </script>
+</body>
+
+</html>

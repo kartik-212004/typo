@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border-radius: 50px;
+            height: 70px;
+            width: 120px;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(103, 124, 124);
+        }
+    </style>
+</head>
+<div class="main">
+    <button id="button">CLICK ME</button><br>
+    <h1 id="h1"></h1>
+</div>
+
+<body>
+    <script>
+        let but = document.getElementById("button");
+        let h1 = document.getElementById("h1");
+        but.onclick = () => {
+            h1.innerText = "loading";
+            setTimeout(() => {
+                h1.innerText = "damn u waited"
+            }, 4000)
+        }
+    </script>
+</body>
+
+</html>

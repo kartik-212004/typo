@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #roll {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<button id="roll">Roll</button><br>
+<h1 id="number"></h1>
+
+<body>
+    <script>
+
+        // console.log(Math.floor((Math.random() * 6) + 1))
+        document.getElementById("roll").addEventListener("click", function () {
+            let randomnumber = Math.trunc((Math.random() * 6) + 1);
+            document.getElementById("number").innerText = randomnumber
+        })
+        // randomnumber = 0
+
+    </script>
+</body>
+
+</html>

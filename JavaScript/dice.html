@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        button {
+            height: 30px;
+            width: 80px;
+            font-size: 10px;
+        }
+
+        .box {
+            margin: 30px;
+        }
+
+        #display {
+            width: 120px;
+            height: 30px;
+        }
+
+        .num {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+
+        #input {
+            height: 40px;
+            width: 150px;
+            border: 1px solid black;
+        }
+
+        .b1 {
+            padding: 7px 0px;
+        }
+
+        #but {
+            background-color: rgb(159, 124, 190);
+            color: white;
+            font-size: 20px;
+            height: 40px;
+            width: 130px;
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<div class="box">
+    <h1>DICE ROLLER</h1>
+</div>
+
+<div class="num">
+    <div class="b1"># of DICE</div>
+    <div class="inp" id="input"></div>
+    <button id="but">ROLL DICE</button>
+</div>
+<div class="img" id="image"></div>
+
+<body>
+    <script>
+        let image = [];
+        let button = document.getElementById("but");
+        let inpu = document.getElementById("input");
+        button.onclick = function random() {
+            let ran;
+            ran = Math.floor((Math.random() * 6) + 1);
+            console.log(ran)
+            inpu.innerText = ran;
+            document.getElementById("image").innerHTML= `<img src="dice/${ran}.png" alt="dice">`
+        }
+    </script>
+</body>
+
+</html>
